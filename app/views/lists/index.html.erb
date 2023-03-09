@@ -6,7 +6,7 @@
     <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
       <img src=".." alt="list poster" class="card-img-top">
       <div class="card-body">
-        <p class="card-title"><%= list.name %></p>
+        <p class="card-title"><%= link_to list.name, list_path(list) %></p>
       </div>
     </div>
   <% end %>
