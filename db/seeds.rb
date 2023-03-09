@@ -14,11 +14,12 @@ Movie.destroy_all
 puts "Creating movies..."
 
 url = "https://tmdb.lewagon.com/movie/top_rated"
+apihome = "https://tmdb.lewagon.com"
 user_serialized = URI.open(url).read
 movies = JSON.parse(user_serialized)
 
 movies["results"].each do |data|
-  movie = Movie.create!({title: data["title"], overview: data["overview"], poster_url: url + data["poster_path"], rating: data["vote_average"]})
+  movie = Movie.create!({title: data["title"], overview: data["overview"], poster_url: apihome + data["poster_path"], rating: data["vote_average"]})
   puts "Created #{movie.title}"
 end
 
