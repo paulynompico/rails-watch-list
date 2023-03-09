@@ -1,7 +1,16 @@
-<h1><%= @list.name %></h1>
+<div class="d-flex justify-content-between p-3">
+  <h3><%= @list.name %></h3>
+  <p><%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn btn-primary" %></p>
+</div>
 
-<% @list.movies.each do |movie| %>
-  <%= movie.title %>
-<% end %>
-
-<p><%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn btn-primary" %></p>
+<div class="d-flex bd-highlight flex-wrap">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
+      <img src=<%=bookmark.movie.poster_url%> alt="movie poster" class="card-img-top">
+      <div class="card-body">
+        <p class="card-title fw-bold"><%= bookmark.movie.title %></p>
+        <p>Note: <%= bookmark.comment %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
