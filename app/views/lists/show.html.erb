@@ -10,6 +10,7 @@
       <div class="card-body">
         <p class="card-title fw-bold"><%= bookmark.movie.title %></p>
         <p>Note: <%= bookmark.comment %></p>
+        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
     </div>
   <% end %>
