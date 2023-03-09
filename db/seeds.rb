@@ -23,4 +23,9 @@ movies["results"].each do |data|
   puts "Created #{movie.title}"
 end
 
+puts "Creating list..."
+
+list = List.create!({name: "Favorites"})
+puts "Created #{list.name}"
+
 puts "Finished!"

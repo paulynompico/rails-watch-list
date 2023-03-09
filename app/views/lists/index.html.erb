@@ -1,0 +1,13 @@
+<h1>My List</h1>
+<p class="pt-3"><%= link_to "All movies", movies_path, class:"btn btn-outline-primary" %></p>
+
+<div class="d-flex p-2 bd-highlight flex-wrap">
+  <% @lists.each do |list| %>
+    <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
+      <img src=".." alt="list poster" class="card-img-top">
+      <div class="card-body">
+        <p class="card-title"><%= list.name %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
