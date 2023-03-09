@@ -2,7 +2,8 @@
   <h3 class="pt-3">Movie List</h3>
 
   <div class="d-flex bd-highlight flex-wrap">
-    <% @movies.each do |movie| %>
+    <% alphabetical_list = @movies.sort_by { |hash| hash.title } %>
+    <% alphabetical_list.each do |movie| %>
       <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
         <%= link_to movie_path(movie), class:"card-body text-decoration-none" do %>
           <img src=<%=movie.poster_url%> alt="movie poster" class="card-img-top">

@@ -14,5 +14,12 @@
         </div>
       </div>
     <% end %>
-  </div>
+    <div class="card text-center p-2 m-3 bd-highlight d-flex justify-content-center align-items-center" style="width: 12rem; background-color: burlywood;">
+      <div>
+          <%= link_to new_list_path, class:"text-decoration-none" do %>
+            <i class="fa-solid fa-plus" style="color: black;"></i>
+            <p style="color: black;">ADD NEW LIST</p>
+          <% end %>
+      </div>
+    </div>
 </div>

@@ -9,6 +9,8 @@ require "json"
 require "open-uri"
 
 puts "Cleaning database..."
+Bookmark.destroy_all
+List.destroy_all
 Movie.destroy_all
 
 puts "Creating movies..."
