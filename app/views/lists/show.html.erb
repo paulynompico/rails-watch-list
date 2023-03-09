@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-3">
   <div class="d-flex p-3 bd-highlight">
     <h3 class="flex-fill"><%= @list.name %></h3>
     <p><%= link_to "Add a Movie", new_list_bookmark_path(@list), style:"background-color: teal; color:white;", class:"btn me-2 bt" %></p>
@@ -7,12 +7,16 @@
 
   <div class="d-flex bd-highlight flex-wrap">
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
-        <img src=<%=bookmark.movie.poster_url%> alt="movie poster" class="card-img-top">
+      <div class="card text-center m-3 bd-highlight" style="width: 12rem; border-radius: 5px;">
+        <div class="d-flex flex-row-reverse bd-highlight m-0 p-0">
+          <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-default" do %>
+            <i class="fa-solid fa-circle-xmark" style="color: #9e2a2b;"></i>
+          <% end %>
+        </div>
+        <img src=<%=bookmark.movie.poster_url%> alt="movie poster" class="card-img-top p-2">
         <div class="card-body">
           <p class="card-title fw-bold"><%= link_to bookmark.movie.title, movie_path(bookmark.movie), class:"text-decoration-none" %></p>
           <p>Note: <%= bookmark.comment %></p>
-          <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"text-decoration-none" %>
         </div>
       </div>
     <% end %>
