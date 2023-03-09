@@ -2,11 +2,15 @@
   <h3 class="pt-3">My Lists</h3>
 
   <div class="d-flex p-2 bd-highlight flex-wrap">
+  <% x = 0 %>
     <% @lists.each do |list| %>
+      <% x += 1 %>
       <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
-        <img src="https://as2.ftcdn.net/v2/jpg/01/68/86/81/1000_F_168868143_pACfr9YeuyHwVCLKrkJdwj25Wn0iUujA.jpg" alt="list poster" class="card-img-top">
         <div class="card-body">
-          <p class="card-title"><%= link_to list.name, list_path(list), class:"text-decoration-none" %></p>
+          <%= link_to list_path(list), class:"card-title text-decoration-none" do %>
+            <img src="https://picsum.photos/200/300?random=<%= x %>" alt="list poster" class="card-img-top">
+            <%= list.name %>
+          <% end %>
         </div>
       </div>
     <% end %>

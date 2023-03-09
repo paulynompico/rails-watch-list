@@ -13,10 +13,12 @@
             <i class="fa-solid fa-circle-xmark" style="color: #9e2a2b;"></i>
           <% end %>
         </div>
-        <img src=<%=bookmark.movie.poster_url%> alt="movie poster" class="card-img-top p-2">
         <div class="card-body">
-          <p class="card-title fw-bold"><%= link_to bookmark.movie.title, movie_path(bookmark.movie), class:"text-decoration-none" %></p>
-          <p>Note: <%= bookmark.comment %></p>
+          <%= link_to movie_path(bookmark.movie), class:"text-decoration-none" do %>
+            <img src=<%=bookmark.movie.poster_url%> alt="movie poster" class="card-img-top p-2">
+            <p class="card-title"><%= bookmark.movie.title %></p>
+          <% end %>
+          <p><%= bookmark.comment %></p>
         </div>
       </div>
     <% end %>
