@@ -1,14 +1,14 @@
-<h1>My List</h1>
-<p class="pt-3"><%= link_to "All movies", movies_path, class:"btn btn-outline-primary" %></p>
-<p class="pt-3"><%= link_to "Add new list", new_list_path, class:"btn btn-outline-primary" %></p>
+<div class="container">
+  <h3 class="pt-3">My Lists</h3>
 
-<div class="d-flex p-2 bd-highlight flex-wrap">
-  <% @lists.each do |list| %>
-    <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
-      <img src=".." alt="list poster" class="card-img-top">
-      <div class="card-body">
-        <p class="card-title"><%= link_to list.name, list_path(list) %></p>
+  <div class="d-flex p-2 bd-highlight flex-wrap">
+    <% @lists.each do |list| %>
+      <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
+        <img src="https://as2.ftcdn.net/v2/jpg/01/68/86/81/1000_F_168868143_pACfr9YeuyHwVCLKrkJdwj25Wn0iUujA.jpg" alt="list poster" class="card-img-top">
+        <div class="card-body">
+          <p class="card-title"><%= link_to list.name, list_path(list) %></p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

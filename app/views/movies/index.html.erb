@@ -1,12 +1,14 @@
-<h1>Movie List</h1>
+<div class="container">
+  <h3 class="pt-3">Movie List</h3>
 
-<div class="d-flex p-2 bd-highlight flex-wrap">
-  <% @movies.each do |movie| %>
-    <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
-      <img src=<%=movie.poster_url%> alt="movie poster" class="card-img-top">
-      <div class="card-body">
-        <p class="card-title"><%= movie.title %></p>
+  <div class="d-flex bd-highlight flex-wrap">
+    <% @movies.each do |movie| %>
+      <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
+        <img src=<%=movie.poster_url%> alt="movie poster" class="card-img-top">
+        <div class="card-body">
+          <p class="card-title"><%= movie.title %></p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
