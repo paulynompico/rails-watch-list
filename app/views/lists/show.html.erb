@@ -1,6 +1,7 @@
 <div class="d-flex justify-content-between p-3">
   <h3><%= @list.name %></h3>
-  <p><%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn btn-primary" %></p>
+  <p><%= link_to "Add a Movie", new_list_bookmark_path(@list), class:"btn btn-primary" %></p>
+  <p><%= link_to "Delete List", list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
 </div>
 
 <div class="d-flex bd-highlight flex-wrap">
