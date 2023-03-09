@@ -14,7 +14,7 @@ Movie.destroy_all
 puts "Creating movies..."
 
 url = "https://tmdb.lewagon.com/movie/top_rated"
-apihome = "https://tmdb.lewagon.com"
+apihome = "https://image.tmdb.org/t/p/w500"
 user_serialized = URI.open(url).read
 movies = JSON.parse(user_serialized)
 

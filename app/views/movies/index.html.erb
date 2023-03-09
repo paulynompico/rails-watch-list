@@ -1,7 +1,10 @@
 <h1>Movie List</h1>
 
-<ul>
+<div class="container">
   <% @movies.each do |movie| %>
-  <li><%= movie.title %></li>
+    <div class="card">
+      <img src=<%=movie.poster_url%> alt="movie poster">
+      <p><%= movie.title %></p>
+    </div>
   <% end %>
-</ul>
+</div>
