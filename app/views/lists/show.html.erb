@@ -1,6 +1,6 @@
-<div class="d-flex justify-content-between p-3">
-  <h3><%= @list.name %></h3>
-  <p><%= link_to "Add a Movie", new_list_bookmark_path(@list), class:"btn btn-primary" %></p>
+<div class="d-flex p-2 bd-highlight">
+  <h3 class="flex-fill"><%= @list.name %></h3>
+  <p><%= link_to "Add a Movie", new_list_bookmark_path(@list), class:"btn btn-primary me-2" %></p>
   <p><%= link_to "Delete List", list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
 </div>
 
@@ -9,7 +9,7 @@
     <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
       <img src=<%=bookmark.movie.poster_url%> alt="movie poster" class="card-img-top">
       <div class="card-body">
-        <p class="card-title fw-bold"><%= bookmark.movie.title %></p>
+        <p class="card-title fw-bold"><%= link_to bookmark.movie.title, movie_path(bookmark.movie), class:"text-decoration-none" %></p>
         <p>Note: <%= bookmark.comment %></p>
         <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
