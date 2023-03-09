@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "lists#index"
 
-  resources :lists
+  resources :lists, only: [:index, :show, :new, :create]
   resources :movies, only: [:index, :show]
 end
