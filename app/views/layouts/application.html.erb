@@ -15,12 +15,12 @@
       <%= link_to root_path, class:"navbar-brand" do%>
         <p style="color: cadetblue;" class="fw-bold"><i class="fa-solid fa-film me-2 pt-3"></i>PAULYN'S WATCH LIST</p>
       <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 pt-3">
-          <li class="nav-item mx-3">
+          <li class="nav-item">
             <p><%= link_to "ADD NEW LIST", new_list_path, class:"nav-link" %></p>
           </li>
           <li class="nav-item">

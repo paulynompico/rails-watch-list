@@ -7,7 +7,7 @@
       <% x += 1 %>
       <%= link_to list_path(list), class:"text-decoration-none" do %>
         <% if (list.photo.key != nil) %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.key %>)">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.key %>')">
             <%= list.name %>
           </div>
         <% else %>
