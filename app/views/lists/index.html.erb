@@ -6,9 +6,15 @@
     <% @lists.each do |list| %>
       <% x += 1 %>
       <%= link_to list_path(list), class:"text-decoration-none" do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300?random=<%= x %>)">
-          <%= list.name %>
-        </div>
+        <% if (list.photo.key != nil) %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.key %>)">
+            <%= list.name %>
+          </div>
+        <% else %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300?random=<%= x %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
 
