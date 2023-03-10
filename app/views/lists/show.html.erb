@@ -1,8 +1,8 @@
 <div class="container mt-3">
   <div class="d-flex p-3 bd-highlight">
     <h3 class="flex-fill"><%= @list.name %></h3>
-    <p><%= link_to "Add a Movie", new_list_bookmark_path(@list), style:"background-color: teal; color:white;", class:"btn me-2 bt" %></p>
-    <p><%= link_to "Delete List", list_path(@list), class:"btn", style:"background-color: teal; color:white;", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+    <p><%= link_to "Add a Movie", new_list_bookmark_path(@list), style: "color:white;", class:"btn me-2 bt btn-long" %></p>
+    <p><%= link_to "Delete List", list_path(@list), class:"btn btn-long", style:" color:white;", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
   </div>
 
   <div class="d-flex bd-highlight flex-wrap">
@@ -10,7 +10,7 @@
       <div class="card text-center m-3 bd-highlight" style="width: 12rem; border-radius: 5px;">
         <div class="d-flex flex-row-reverse bd-highlight m-0 p-0">
           <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-default" do %>
-            <i class="fa-solid fa-circle-xmark" style="color: #9e2a2b;"></i>
+            <i class="fa-solid fa-circle-xmark x-btn"></i>
           <% end %>
         </div>
         <div class="card-body">
