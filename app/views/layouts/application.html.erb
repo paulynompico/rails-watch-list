@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-3 pt-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-3">
       <%= link_to root_path, class:"navbar-brand" do%>
         <p style="color: cadetblue;" class="fw-bold"><i class="fa-solid fa-film me-2"></i>PAULYN'S WATCH LIST</p>
       <% end %>
@@ -27,6 +27,10 @@
             <p><%= link_to "ALL MOVIES", movies_path, class:"nav-link" %></p>
           </li>
         </ul>
+        <%= form_tag movies_path, :method => "get", class:"d-flex" do %>
+          <%= text_field_tag(:search, params[:search], class:'form-control me-2', placeholder:'Movie title') %>
+          <%= submit_tag("Search", :title => nil, :class => "btn btn-outline-success" ) %>
+        <% end %>
       </div>
     </nav>
     <%= yield %>
