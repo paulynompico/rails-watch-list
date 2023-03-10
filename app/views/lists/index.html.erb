@@ -5,22 +5,17 @@
   <% x = 0 %>
     <% @lists.each do |list| %>
       <% x += 1 %>
-      <div class="card text-center p-2 m-3 bd-highlight" style="width: 12rem;">
-        <div class="card-body">
-          <%= link_to list_path(list), class:"card-title text-decoration-none" do %>
-            <img src="https://picsum.photos/200/300?random=<%= x %>" alt="list poster" class="card-img-top">
-            <%= list.name %>
-          <% end %>
+      <%= link_to list_path(list), class:"text-decoration-none" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300?random=<%= x %>)">
+          <%= list.name %>
         </div>
-      </div>
+      <% end %>
     <% end %>
-    <div class="card text-center p-2 m-3 bd-highlight d-flex justify-content-center align-items-center" style="width: 12rem; background-color: burlywood;">
-      <div>
-          <%= link_to new_list_path, class:"text-decoration-none" do %>
-            <i class="fa-solid fa-plus" style="color: black;"></i>
-            <p style="color: black;">ADD NEW LIST</p>
-          <% end %>
-      </div>
-    </div>
+
+      <%= link_to new_list_path, class:"text-decoration-none" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url(http://store-images.s-microsoft.com/image/apps.63088.13510798884779018.d0c94606-a2ef-48fe-8108-3fcbd44671ea.4aa24fdf-e4f2-4f8f-a66d-d7c183f005b3)">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      <% end %>
   </div>
 </div>
