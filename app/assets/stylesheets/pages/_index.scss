@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.card {
+  border-radius: 7px;
+  border: 0px;
+  box-shadow: 1px,2px,5px,rgba(0,0,0,0.3);
+  transition: 0.2s all ease-in-out;
+}
+
+.card:hover {
+  background-color: rgba(95, 158, 160, 0.444);
+}
+
+.card img {
+  border-radius: 5px;
+}
