@@ -1,15 +1,13 @@
-<div class="container ctr-bordered">
-  <div class="container mt-5 d-flex justify-content-center">
-    <h3><%= @movie.title %></h3>
-  </div>
+<div class="movie-info animate__animated animate__zoomIn">
+  <h3><%= @movie.title %></h3>
 
-  <div class="container mt-5">
-    <div class="d-flex">
-      <img src=<%= @movie.poster_url %> alt="movie poster" class="card-img-top" style="width: 12rem;">
-      <div class="d-flex flex-column p-3 justify-content-center">
-        <p><%= @movie.overview %></p>
-        <p class="fw-bold">Rating: <%= @movie.rating %></p>
-      </div>
+  <div class="content">
+    <div>
+      <img src=<%= @movie.poster_url %> alt="movie poster" style="width: 280px; padding: 20px 20px;">
+    </div>
+    <div style="width: 40vw;">
+      <p><%= @movie.overview %></p>
+      <p class="fw-bold">Rating: <%= @movie.rating %></p>
     </div>
   </div>
 </div>
