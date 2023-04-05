@@ -1,0 +1,68 @@
+.stars{
+  z-index: -5;
+  width: 100vw;
+}
+
+.glowing_stars .star{
+  position: absolute;
+  border-radius: 100%;
+  background-color: #ffe188;
+  width: 3px;
+  height: 3px;
+  opacity: 0.3;
+  will-change: opacity;
+}
+
+
+.glowing_stars .star:nth-child(1){
+  top: 80%;
+  left: 25%;
+  animation: glow-star 2s infinite ease-in-out alternate 1s;
+}
+.glowing_stars .star:nth-child(2){
+  top: 20%;
+  left: 40%;
+  animation: glow-star 2s infinite ease-in-out alternate 3s;
+}
+.glowing_stars .star:nth-child(3){
+  top: 25%;
+  left: 25%;
+  animation: glow-star 2s infinite ease-in-out alternate 5s;
+}
+.glowing_stars .star:nth-child(4){
+  top: 75%;
+  left: 80%;
+  animation: glow-star 2s infinite ease-in-out alternate 7s;
+}
+.glowing_stars .star:nth-child(5){
+  top: 90%;
+  left: 50%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
+}
+
+
+.glowing_stars .star:nth-child(6){
+  top: 25%;
+  left: 80%;
+  animation: glow-star 2s infinite ease-in-out alternate 1s;
+}
+.glowing_stars .star:nth-child(7){
+  top: 40%;
+  left: 20%;
+  animation: glow-star 2s infinite ease-in-out alternate 3s;
+}
+.glowing_stars .star:nth-child(8){
+  top: 65%;
+  left: 75%;
+  animation: glow-star 2s infinite ease-in-out alternate 5s;
+}
+.glowing_stars .star:nth-child(9){
+  top: 85%;
+  left: 70%;
+  animation: glow-star 2s infinite ease-in-out alternate 7s;
+}
+.glowing_stars .star:nth-child(10){
+  top: 50%;
+  left: 90%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
+}

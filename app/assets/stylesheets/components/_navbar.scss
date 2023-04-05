@@ -10,3 +10,23 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar {
+  background: #8c8c8c !important; 
+}
+
+.nav-link {
+  color: white;
+}
+
+.search-btn {
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.search-btn:hover {
+  background-color: #CD7640;
+  border: 1px solid #CD7640;
+  color: rgba(255, 255, 255, 0.759);
+}

@@ -9,6 +9,7 @@
   bottom: 0;
   width: 100vw;
   position: fixed;
+  z-index: 5;
 }
 .footer-links {
   display: flex;
@@ -21,5 +22,5 @@
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  color: rgb(102, 147, 149) !important;
+  color: #3A271C !important;
 }

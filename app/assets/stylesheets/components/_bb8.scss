@@ -2,33 +2,75 @@
 
 *,*:before,*:after { box-sizing: border-box; }
 body { 
-  background: rgb(24, 24, 24); 
-  overflow: hidden;
+  background: rgb(24, 24, 24);
+}
+
+.stars{
+  z-index: -5;
+  width: 100vw;
+}
+
+.glowing_stars .star{
+  position: absolute;
+  border-radius: 100%;
+  background-color: #ffe188;
+  width: 3px;
+  height: 3px;
+  opacity: 0.3;
+  will-change: opacity;
+  z-index: -4;
+}
+
+
+.glowing_stars .star:nth-child(1){
+  top: 80%;
+  left: 25%;
+  animation: glow-star 2s infinite ease-in-out alternate 1s;
+}
+.glowing_stars .star:nth-child(2){
+  top: 20%;
+  left: 40%;
+  animation: glow-star 2s infinite ease-in-out alternate 3s;
+}
+.glowing_stars .star:nth-child(3){
+  top: 25%;
+  left: 25%;
+  animation: glow-star 2s infinite ease-in-out alternate 5s;
+}
+.glowing_stars .star:nth-child(4){
+  top: 75%;
+  left: 80%;
+  animation: glow-star 2s infinite ease-in-out alternate 7s;
+}
+.glowing_stars .star:nth-child(5){
+  top: 90%;
+  left: 50%;
+  animation: glow-star 2s infinite ease-in-out alternate 9s;
 }
 
 
 .sand { 
   background: #8c8c8c; 
-  height: 17vh;
-  position: absolute;
+  height: 15vh;
+  position: fixed;
   width: 100vw;
-  z-index: -1;
+  z-index: 2;
   bottom: 0;
 }
 
 // BB-8
 $d: 140px;
 .bb8 {
-  position: absolute;
+  position: fixed;
   margin-left: -$d/2;
   width: $d;
-  
+  z-index: 3;
   bottom: 10%;
   left: 0;
 }
 .antennas {
   position: absolute;
- 
+  z-index: 3;
   transition: left .6s;
   
   left: 22%;
@@ -41,7 +83,7 @@ $d: 140px;
   background: #e0d2be;
   position: absolute;
   width: 2px;
-  
+  z-index: 3;
   &.short {
     height: 20px;
     
@@ -67,7 +109,7 @@ $d: 140px;
   overflow: hidden;
   position: absolute;
   width: 90px;
-  z-index: 1;
+  z-index: 4;
   
   top: -46px;
   left: 50%;
@@ -168,6 +210,7 @@ $d: 140px;
   overflow: hidden;
   position: relative;
   width: $d;
+  z-index: 3;
 }
 .lines {
   border: 2px solid #B19669;
@@ -176,6 +219,7 @@ $d: 140px;
   opacity: .6;
   position: absolute;
   width: 400px;
+  z-index: 3;
   
   &.two {
     top: -10px;
@@ -189,6 +233,7 @@ $d: 140px;
   margin-left: -35px;
   position: absolute;
   width: 70px;
+  z-index: 3;
   &:after {
     background: #d1c3ad;
     border-radius: 50%;
@@ -268,4 +313,17 @@ a:visited {
 a:hover,
 a:focus {
   color: white;
+}
+
+@-moz-keyframes glow-star {
+  40% { -moz-opacity: 0.3;}
+  90%,100% { -moz-opacity: 1; -moz-transform: scale(1.2);}
+}
+@-webkit-keyframes glow-star {
+  40% { -webkit-opacity: 0.3;}
+  90%,100% { -webkit-opacity: 1; -webkit-transform: scale(1.2);}
+}
+@keyframes glow-star{
+  40% { -webkit-opacity: 0.3; opacity: 0.3;  }
+  90%,100% { -webkit-opacity: 1; opacity: 1; -webkit-transform: scale(1.2); transform: scale(1.2); border-radius: 999999px;}
 }
