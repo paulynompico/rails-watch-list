@@ -65,3 +65,11 @@
   color: cadetblue;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+}

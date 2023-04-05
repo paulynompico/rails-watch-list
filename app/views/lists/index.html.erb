@@ -1,7 +1,7 @@
 <div class="lists">
   <h3>My Lists</h3>
 
-  <div class="list-cards">
+  <div class="list-cards" data-controller="new-list">
   <% x = 0 %>
     <% @lists.each do |list| %>
       <% x += 1 %>
@@ -18,11 +18,20 @@
       <% end %>
     <% end %>
 
-      <%= link_to new_list_path, class:"text-decoration-none" do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url(https://i.pinimg.com/originals/7f/c2/27/7fc2270d1d581f70e27795474b558722.jpg)">
-          <i class="fa-solid fa-plus"></i>
-        </div>
-      <% end %>
+    <div class="card-category" data-action="click->new-list#displayForm" data-new-list-target="infos" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url(https://i.pinimg.com/originals/7f/c2/27/7fc2270d1d581f70e27795474b558722.jpg)">
+      <i class="fa-solid fa-plus"></i>
+    </div>
+    <div class="card-category d-none" data-new-list-target="form" style="background: #999 !important;">
+      <div class="card-form">
+        <h3 class="pt-3">New list</h3>
+        <%= simple_form_for @list do |f| %>
+          <%= f.input :name, label: false %>
+          <div class="form-action">
+            <%= f.submit "✔", style: "color: white; border: #17122B; border-radius: 4px; background-color: #CD7640; margin-bottom: 15px; align-item: center; width: 100%; margin 0 auto;" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
