@@ -1,25 +1,25 @@
 .footer {
-  background: #F4F4F4;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 70px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  color: rgba(255, 255, 255, 0.759);
   bottom: 0;
+  width: 100vw;
+  position: fixed;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: rgba(255, 255, 255, 0.759) !important;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  color: cadetblue;
-  opacity: 1;
+  color: rgb(102, 147, 149) !important;
 }
