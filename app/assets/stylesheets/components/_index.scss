@@ -4,6 +4,7 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "movie";
+@import "flip";
 
 .lists {
   padding-bottom: 15vh;
@@ -15,10 +16,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
 .lists h3 {
-  color: rgba(255, 255, 255, 0.759);
+  color: #e0d2be;
   margin-top: 20px;
 }
-

@@ -18,7 +18,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to root_path
     else
-      render :index, status: :unprocessable_entity
+      redirect_to root_path, status: :see_other
     end
   end
 

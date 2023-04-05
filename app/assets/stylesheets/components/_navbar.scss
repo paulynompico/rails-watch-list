@@ -12,21 +12,26 @@
 }
 
 .navbar {
-  background: #8c8c8c !important; 
+  background: transparent !important; 
 }
 
 .nav-link {
-  color: white;
+  color: #CD7640 !important;
+}
+
+.nav-link:hover {
+  color: #d1c3ad !important;
 }
 
 .search-btn {
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid #ffe81f;
+  color: #ffe81f !important;
   border-radius: 3px;
 }
 
 .search-btn:hover {
   background-color: #CD7640;
   border: 1px solid #CD7640;
-  color: rgba(255, 255, 255, 0.759);
+  color: rgba(255, 255, 255, 0.759) !important;
 }

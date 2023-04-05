@@ -1,5 +1,5 @@
-<div class="container pt-3">
-  <h1>Add movie to <%= @list.name %> list</h1>
+<div class="movie-info animate__animated animate__zoomIn">
+  <h3>Add movie to <%= @list.name %> list</h3>
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.association :movie %>
     <%= f.input :comment %>
