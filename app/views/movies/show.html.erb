@@ -2,12 +2,23 @@
   <h3><%= @movie.title %></h3>
 
   <div class="content">
-    <div>
-      <img src=<%= @movie.poster_url %> alt="movie poster" style="width: 280px; padding: 20px 20px;">
-    </div>
-    <div style="width: 40vw;">
+    <% if @movie.trailer.present? %>
+      <div>
+        <iframe width="420" height="315"
+          src="https://www.youtube.com/embed/<%= @movie.trailer %>">
+        </iframe>
+      </div>
+    <% else %>
+      <div>
+        <img src=<%= @movie.poster_url %> alt="movie poster" style="width: 280px; padding: 20px 20px;">
+      </div>
+    <% end %>
+    <div style="width: 40vw; padding: 10px 20px;">
       <p><%= @movie.overview %></p>
       <p class="fw-bold">Rating: <%= @movie.rating %></p>
+      <form>
+        <input type="button" value="⏪" onclick="history.back()" style="background-color: transparent; border: 0; font-size: 30px">
+      </form>
     </div>
   </div>
 </div>
