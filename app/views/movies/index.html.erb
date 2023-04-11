@@ -1,13 +1,17 @@
 <div class="lists">
   <h3>Movie List</h3>
 
-  <div class="list-cards">
-    <% @movies.each do |movie| %>
-      <div class="movie-card">
-        <%= link_to movie_path(movie), class:"text-decoration-none" do %>
-          <img src=<%=movie.poster_url%> alt="movie poster" class="card-img-top">
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <% if @movies.length == 0 %>
+    <h5>No movies found</h5>
+  <% else %>
+    <div class="list-cards">
+      <% @movies.each do |movie| %>
+        <div class="movie-card">
+          <%= link_to movie_path(movie), class:"text-decoration-none" do %>
+            <img src=<%=movie.poster_url%> alt="movie poster" class="card-img-top">
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
