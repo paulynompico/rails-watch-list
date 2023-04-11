@@ -63,7 +63,6 @@ function moveDroid(){
 setInterval(moveDroid, 10);
 
 $( document ).on( "mousemove", function( event ) {
-  $('h2').addClass('hide');
   $mPos = event.pageX;
   return $mPos;
 });
