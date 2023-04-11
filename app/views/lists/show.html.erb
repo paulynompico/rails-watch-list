@@ -1,31 +1,26 @@
 <div class="lists">
   <h3><%= @list.name %></h3>
   <div class="list-cards">
-    <p><%= link_to "Add a Movie", new_list_bookmark_path(@list), style:"padding: 5px 20px;", class:"search-btn" %></p>
-    <p><%= link_to "Delete List", list_path(@list), class:"search-btn", style:"padding: 5px 20px;", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+    <p><%= link_to "Delete List", list_path(@list), class:"search-btn", style:"padding: 5px 20px; text-decoration: none;", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
   </div>
 
-  <div class="d-flex bd-highlight flex-wrap">
+  <div class="list-cards">
+    <%= link_to new_list_bookmark_path(@list), style:"text-decoration: none;" do %>
+      <div class="movie-card" style="text-decoration: none; background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1728&q=80)">
+        <i class="fa-solid fa-plus" style="color: white; text-decoration: none;"></i>
+      </div>
+    <% end %>
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src=<%=bookmark.movie.poster_url%> alt="movie poster" style="width: 200px;">
-          </div>
-          <div class="flip-card-back">
-            <div class="comment">
-              <%= link_to movie_path(bookmark.movie) do %>
-                <p>COMMENT</p>
-                <br>
-                <p><%= bookmark.comment %></p>
-              <% end %>
-            </div>
-            <div class="bin">
-              <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-default" do %>
-                <i class="fa-solid fa-trash"></i>
-              <% end %>
-            </div>  
-          </div>
+      <div class="list-cards">
+        <div class="movie-card">
+          <%= link_to movie_path(bookmark.movie), class:"text-decoration-none" do %>
+            <img src=<%=bookmark.movie.poster_url%> alt="movie poster" class="card-img-top">
+          <% end %>
+          <div class="bin">
+            <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-default" do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </div>  
         </div>
       </div>
     <% end %>

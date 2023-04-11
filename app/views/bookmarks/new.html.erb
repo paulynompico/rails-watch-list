@@ -2,7 +2,9 @@
   <h3>Add movie to <%= @list.name %> list</h3>
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.association :movie %>
-    <%= f.input :comment %>
     <%= f.submit "Add movie" %>
   <% end %> 
+  <form>
+    <input type="button" value="⏪" onclick="history.back()" style="background-color: transparent; border: 0; font-size: 30px">
+  </form>
 </div>

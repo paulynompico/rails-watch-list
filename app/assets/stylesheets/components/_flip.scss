@@ -50,6 +50,21 @@
 }
 
 .bin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #CD7640;
   font-size: 20px;
+  bottom: 10px;
+  position: absolute;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff9a;
+  box-shadow: 0, 2px, 4px, rgba(0,0,0,0.4);
+}
+
+.bin-btn:hover {
+  color: #CD7640;
 }
